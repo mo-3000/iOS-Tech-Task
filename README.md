@@ -34,7 +34,7 @@ You can log in using the following user:
 
 |  Username          | Password         |
 | ------------- | ------------- |
-| test+ios@moneyboxapp.com  | P455word12  |
+| test+ios2@moneyboxapp.com  | P455word12  |
 
 #### Authentication
 You should obtain a bearer token from the Login response, and attach it as an Authorization header for the endpoints. Helper methods in the API/Base folder should be used for that.
