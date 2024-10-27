@@ -7,7 +7,7 @@
 
 public protocol DataProviderLogic: AnyObject {
     func login(request: LoginRequest, completion: @escaping ((Result<LoginResponse, ErrorResponse>) -> Void))
-    func fetchProducts(completion: @escaping ((Result<AccountResponse, ErrorResponse>) -> Void))
+    func fetchAccounts(completion: @escaping ((Result<AccountResponse, ErrorResponse>) -> Void))
     func addMoney(request: OneOffPaymentRequest, completion: @escaping ((Result<OneOffPaymentResponse, ErrorResponse>) -> Void))
 }
 
@@ -17,7 +17,7 @@ public class DataProvider: DataProviderLogic {
         API.Login.login(request: request).fetchResponse(completion: completion)
     }
     
-    public func fetchProducts(completion: @escaping ((Result<AccountResponse, ErrorResponse>) -> Void)) {
+    public func fetchAccounts(completion: @escaping ((Result<AccountResponse, ErrorResponse>) -> Void)) {
         API.Account.products.fetchResponse(completion: completion)
     }
     

@@ -31,6 +31,12 @@
 		513759212CCED39B0014B595 /* AccountDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513759092CCED39B0014B595 /* AccountDetailViewModel.swift */; };
 		513759222CCED39B0014B595 /* AccountListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5137590A2CCED39B0014B595 /* AccountListViewModel.swift */; };
 		513759232CCED39B0014B595 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5137590B2CCED39B0014B595 /* LoginViewModel.swift */; };
+		513B352A2CCED7550000FF96 /* AccountDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B35212CCED7550000FF96 /* AccountDetailViewModelTests.swift */; };
+		513B352B2CCED7550000FF96 /* AccountListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B35222CCED7550000FF96 /* AccountListViewModelTests.swift */; };
+		513B352C2CCED7550000FF96 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B35232CCED7550000FF96 /* LoginViewModelTests.swift */; };
+		513B352D2CCED7550000FF96 /* DataProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B35252CCED7550000FF96 /* DataProviderMock.swift */; };
+		513B352E2CCED7550000FF96 /* NetworkSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B35262CCED7550000FF96 /* NetworkSessionMock.swift */; };
+		513B352F2CCED7550000FF96 /* SessionManagerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B35272CCED7550000FF96 /* SessionManagerStub.swift */; };
 		B26EF47828881E7F003BFDF2 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = B26EF47728881E7F003BFDF2 /* Networking */; };
 		B2CA46CC279350880041B3A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CA46CB279350880041B3A5 /* AppDelegate.swift */; };
 		B2CA46D52793508A0041B3A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2CA46D42793508A0041B3A5 /* Assets.xcassets */; };
@@ -75,6 +81,12 @@
 		513759092CCED39B0014B595 /* AccountDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailViewModel.swift; sourceTree = "<group>"; };
 		5137590A2CCED39B0014B595 /* AccountListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountListViewModel.swift; sourceTree = "<group>"; };
 		5137590B2CCED39B0014B595 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		513B35212CCED7550000FF96 /* AccountDetailViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailViewModelTests.swift; sourceTree = "<group>"; };
+		513B35222CCED7550000FF96 /* AccountListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountListViewModelTests.swift; sourceTree = "<group>"; };
+		513B35232CCED7550000FF96 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		513B35252CCED7550000FF96 /* DataProviderMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviderMock.swift; sourceTree = "<group>"; };
+		513B35262CCED7550000FF96 /* NetworkSessionMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionMock.swift; sourceTree = "<group>"; };
+		513B35272CCED7550000FF96 /* SessionManagerStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManagerStub.swift; sourceTree = "<group>"; };
 		B24EED92288ED5740016C233 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
 		B2CA46C8279350880041B3A5 /* MoneyBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2CA46CB279350880041B3A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +192,26 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		513B35242CCED7550000FF96 /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				513B35212CCED7550000FF96 /* AccountDetailViewModelTests.swift */,
+				513B35222CCED7550000FF96 /* AccountListViewModelTests.swift */,
+				513B35232CCED7550000FF96 /* LoginViewModelTests.swift */,
+			);
+			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
+		513B35282CCED7550000FF96 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				513B35252CCED7550000FF96 /* DataProviderMock.swift */,
+				513B35262CCED7550000FF96 /* NetworkSessionMock.swift */,
+				513B35272CCED7550000FF96 /* SessionManagerStub.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		B2CA46BF279350880041B3A5 = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +251,8 @@
 		B2CA46E12793508A0041B3A5 /* MoneyBoxTests */ = {
 			isa = PBXGroup;
 			children = (
+				513B35282CCED7550000FF96 /* Mocks */,
+				513B35242CCED7550000FF96 /* ViewModelTests */,
 				B2CA47662794D69A0041B3A5 /* StubData.swift */,
 				B2CA47682794D6AC0041B3A5 /* ResponseJsons */,
 			);
@@ -381,7 +415,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				513B352F2CCED7550000FF96 /* SessionManagerStub.swift in Sources */,
+				513B352E2CCED7550000FF96 /* NetworkSessionMock.swift in Sources */,
+				513B352C2CCED7550000FF96 /* LoginViewModelTests.swift in Sources */,
 				B2CA47672794D69A0041B3A5 /* StubData.swift in Sources */,
+				513B352B2CCED7550000FF96 /* AccountListViewModelTests.swift in Sources */,
+				513B352D2CCED7550000FF96 /* DataProviderMock.swift in Sources */,
+				513B352A2CCED7550000FF96 /* AccountDetailViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

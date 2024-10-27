@@ -54,7 +54,7 @@ final class AccountListViewModel: AccountListViewModelProtocol {
         DispatchQueue.main.async {
             self.loadingState = .inProgress
         }
-        dataProvider.fetchProducts { [weak self] result in
+        dataProvider.fetchAccounts { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let response):

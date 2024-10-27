@@ -13,8 +13,8 @@ public protocol LoginViewModelDelegate: AnyObject {
 }
 
 public protocol LoginViewModelProtocol: InputFieldDelegate {
-    var provider: DataProviderLogic { get }
-    var manager: SessionManagerProtocol { get }
+    var dataProvider: DataProviderLogic { get }
+    var sessionManager: SessionManagerProtocol { get }
     var delegate: LoginViewModelDelegate? { get set }
     func login(email: String, password: String)
     var onSuccess: ((LoginResponse.User) -> Void)? { get set }
@@ -24,24 +24,24 @@ public protocol LoginViewModelProtocol: InputFieldDelegate {
 final class LoginViewModel: LoginViewModelProtocol {
     
     weak var delegate: LoginViewModelDelegate?
-    var provider: DataProviderLogic
-    var manager: SessionManagerProtocol
+    var dataProvider: DataProviderLogic
+    var sessionManager: SessionManagerProtocol
     
     var onSuccess: ((LoginResponse.User) -> Void)?
     var onError: ((ErrorResponse) -> Void)?
     
     init(provider: DataProviderLogic = DataProvider(), manager: SessionManagerProtocol = SessionManager()) {
-        self.provider = provider
-        self.manager = manager
+        self.dataProvider = provider
+        self.sessionManager = manager
     }
     
     func login(email: String, password: String) {
         let request = LoginRequest(email: email, password: password)
         
-        provider.login(request: request) { [weak self] result in
+        dataProvider.login(request: request) { [weak self] result in
             switch result {
             case .success(let response):
-                self?.manager.setUserToken(response.session.bearerToken)
+                self?.sessionManager.setUserToken(response.session.bearerToken)
                 self?.onSuccess?(response.user)
             case .failure(let error):
                 self?.onError?(error)
