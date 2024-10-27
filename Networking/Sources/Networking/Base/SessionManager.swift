@@ -7,11 +7,16 @@
 
 import Foundation
 
-public final class SessionManager: NSObject {
+public protocol SessionManagerProtocol {
+    func setUserToken(_ token: String)
+    func removeUserToken()
+}
+
+public final class SessionManager: NSObject, SessionManagerProtocol {
     public func setUserToken(_ token: String) {
         Authentication.token = token
     }
-    
+
     public func removeUserToken() {
         Authentication.token = nil
     }
