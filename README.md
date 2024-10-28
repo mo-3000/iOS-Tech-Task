@@ -1,70 +1,107 @@
-
 # Moneybox iOS Technical Challenge
 
-## The Brief
+Welcome to my take on the Moneybox iOS Technical Challenge! 🎉 This app aims to provide a "light" version of the Moneybox experience, letting users log in, view their account balances, and check out their Moneybox savings. Here's a quick rundown of the solution and the approach I took.
 
-To create a 'light' version of the Moneybox app that will allow existing users to login and check their account balance, as well as viewing their Moneybox savings. 
-- To clone this repository into your private repository and implement the solution.
- 
-### The app should have
-- A login screen to allow existing users to sign in
-- A screen to show the accounts the user holds, e.g. ISA, GIA
-- A screen to show some details of the account, including a simple button to add money to its moneybox.
-- The button will add a fixed amount of £10. It should use the `POST /oneoffpayments` endpoint provided, and the account's Moneybox amount would be updated.
+## Overview 📝
 
-A prototype wireframe of all 3 screens is provided as a guideline. You are free to provide additional information if you wish.
-![](wireframe.png)
+The app consists of three main screens:
+1. **Login Screen**: For existing users to log in securely.
+2. **Account List Screen**: Displays a list of accounts, such as ISA and GIA, using a collection view with a clean and modern layout.
+3. **Account Detail Screen**: Shows account details with a button to add money to the Moneybox (a fixed £10 increment).
 
-### What we are looking for
- - **Showcase what you can do. It can be a refined UI, or enhanced UX, or use of specific design patterns in the code, or anything that can make the project stand out.**
- - Demonstration of coding style, conventions and patterns.
- - A tidy code organisation.
- - Use of autolayout and UIKit.
- - Implementation of unit tests.
- - Any accessibility feature would be a bonus.
- - The application must run on iOS 15 or later.
- - Any 3rd party library should be integrated using Swift Package Manager.
+I focused on providing a smooth user experience, following best practices in app architecture and coding standards.
 
-### API Usage
-The Networking methods and Models for requests and responses are ready-made in the Networking module of the project.
+## Key Features 🚀
 
-#### Base URL & Test User
-The base URL for the moneybox sandbox environment is `https://api-test02.moneyboxapp.com/`. </br>
-You can log in using the following user:
+### MVVM Architecture 🏛️
+- I opted for the MVVM pattern to keep the codebase clean and maintainable. It separates the view logic from business logic, making it easier to test and extend.
+- The view models handle the business logic and data manipulation, while the views remain focused on rendering the UI.
 
-|  Username          | Password         |
-| ------------- | ------------- |
-| test+ios2@moneyboxapp.com  | P455word12  |
+### Programmatic UI 📱
+- The entire UI is built programmatically — no storyboards. This choice provides more flexibility and makes the layout code easier to tweak.
+- It also reduces merge conflicts in version control since there are no large XML files being modified.
 
-#### Authentication
-You should obtain a bearer token from the Login response, and attach it as an Authorization header for the endpoints. Helper methods in the API/Base folder should be used for that.
-(Note: The BearerToken has a sliding expiration of 5 mins).
+### Modern CollectionView with Diffable Data Source 📚
+- I used a `UICollectionView` with a diffable data source for the account list, which is perfect for handling dynamic data.
+- There's also a splash of animation when new items load, giving the app a polished look.
+- The collection view is styled with a compositional layout to create a flexible and modern appearance.
 
-| Key  |  Value  |
-| ------------- | ------------- |
-| Authorization |  Bearer TsMWRkbrcu3NGrpf84gi2+pg0iOMVymyKklmkY0oI84= |
+### Dependency Injection 🔧
+- The view models and helpers use dependency injection, which keeps the code loosely coupled and easy to test.
+- This approach also allows us to swap out implementations for testing without changing the core logic.
 
-#### API Call Hint
+### Error Handling 🛑
+- Error states are managed gracefully with user-friendly messages.
+- The UI updates dynamically based on the loading status (in progress, completed, or error) to provide feedback to the user.
 
-```
-let dataProvider = DataProvider()
-dataProvider.login(request: request, completion: completion)
-```
-request: Initialize your request model </br>
-Completion: Handle your API success and failure cases
+### Unit Testing with Mocks and Stubs 🧪
+- I included unit tests that use mocks and stubs to simulate things like API responses, making testing straightforward and reliable.
+- Dependency injection is used here to inject mocked data providers into the view models.
 
-## Unit Tests
-The MoneyBoxTests folder includes stubbed data to easily mock the responses needed for unit testing
+### Async Image Fetching 📷
+- Added an `AsyncImageFetcher` utility, which can handle loading images for accounts if we decide to display images in the future.
 
-#### Usage Hint
-You can create a DataProviderMock class via inject DataProviderLogic protocol </br>
-You can mock response in Login.json file like this:
-```
-StubData.read(file: "Login", callback: completion)
-```
+### Accessibility 🌍
+- VoiceOver support is enabled through accessibility labels on interactive elements.
 
-### How to Submit your solution:
- - To share your Github repository with the user valerio-bettini.
- - (Optional) Provide a readme in markdown which outlines your solution.
+## Design Choices 🎨
 
-## Good luck!
+### Clean and Modern UI
+- I aimed for a minimalistic design with enough visual feedback to guide the user. 
+- Animations make the app feel more alive—cells gently animate into place, giving the interface a fun touch.
+- Colours and fonts were chosen for readability and visual appeal.
+
+### Programmatic Views
+- Building views in code helps maintain fine-grained control over the UI. It’s easier to configure constraints and animations, and the codebase becomes more flexible for future changes.
+
+### Error Handling
+- The app attempts to handle errors gracefully. If something goes wrong (like a failed network request), the user will see a friendly message with an option to retry.
+
+### MVVM for Testability
+- Using MVVM made it easy to isolate business logic in the view models, which allows for more granular unit testing.
+
+## Challenges and Considerations 🧩
+
+- **Bearer Token Expiration**: Since the token expires every 5 minutes, I made sure the app could gracefully handle expired sessions and prompt the user to log back in.
+- **Data Refreshing**: The app refreshes data using pull-to-refresh and manages the loading states to show appropriate indicators.
+
+## Running the App 🏃‍♂️
+
+### Requirements
+- Xcode 15 or later
+- iOS 15+
+
+1. Clone the repository and open `Moneybox.xcodeproj`.
+2. Run the app on a simulator or a real device.
+3. Log in with the test credentials provided in the brief:
+   - **Username**: `test+ios2@moneyboxapp.com`
+   - **Password**: `P455word12`
+
+4. Explore the app! Check out the accounts list and try adding some money to the Moneybox.
+
+## Dependencies 🧰
+
+All third-party dependencies are managed using Swift Package Manager, keeping things simple and native.
+
+## What's Next? 🤔
+
+## What's Next? 🤔
+
+If I had more time, I would:
+
+- **Implement a more sophisticated token refresh mechanism**: Currently, the app prompts the user to log back in when the token expires. I would improve this by automatically refreshing the token in the background, allowing for a seamless user experience.
+
+- **Add more animations to the login screen and account detail interactions**: While there are some animations in place to enhance the app's polish, I would introduce additional animations to make transitions smoother and interactions more engaging. For example, animating form elements on the login screen or adding subtle motion effects when navigating to the account detail screen would further enrich the experience.
+
+- **Introduce support for biometric authentication (Face ID/Touch ID)**: To enhance security and improve user convenience, I would add support for biometric authentication. This would allow users to log in quickly using Face ID or Touch ID, offering a secure and modern authentication experience.
+
+- **Expand on unit tests and add UI tests for key user flows**: Although unit tests are included for the core business logic, I would further increase test coverage to include more edge cases. I would also add UI tests to verify critical user flows, such as the login process, account listing, and money addition, ensuring that the app behaves as expected under various conditions.
+
+- **Leverage Combine for reactive UI experiences**: While I chose not to use reactive programming in this project to reduce complexity and make classes easier to test, I would implement Combine in larger projects to handle asynchronous events and data binding more effectively. Combine would enable a more reactive and declarative approach to managing UI updates, making the code more concise and responsive, especially when dealing with dynamic data streams.
+
+
+## Conclusion 🏁
+
+This project was a blast to work on! I aimed to create a solid starting point that follows best practices and delivers a pleasant user experience. Hopefully, it showcases my skills in iOS development, clean architecture, and user-friendly design.
+
+Feel free to reach out if you have any questions or feedback! 😊
