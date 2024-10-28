@@ -131,8 +131,8 @@ class LoginViewController: UIViewController {
             inputStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             inputStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             
-            submitButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            submitButton.heightAnchor.constraint(equalToConstant: 44),
+            submitButton.topAnchor.constraint(equalTo: inputStackView.bottomAnchor, constant: 20),
+            submitButton.heightAnchor.constraint(equalToConstant: 50),
             submitButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             submitButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
