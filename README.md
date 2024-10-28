@@ -79,12 +79,6 @@ I focused on providing a smooth user experience, following best practices in app
 
 4. Explore the app! Check out the accounts list and try adding some money to the Moneybox.
 
-## Dependencies 🧰
-
-All third-party dependencies are managed using Swift Package Manager, keeping things simple and native.
-
-## What's Next? 🤔
-
 ## What's Next? 🤔
 
 If I had more time, I would:
