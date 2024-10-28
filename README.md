@@ -11,6 +11,14 @@ The app consists of three main screens:
 
 I focused on providing a smooth user experience, following best practices in app architecture and coding standards.
 
+## Screenshots
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/82988d91-dacf-464d-8164-f647c1c167f4" alt="Simulator Screenshot 1" width="250"/>
+  <img src="https://github.com/user-attachments/assets/018f576f-85c2-4952-9b93-1d568332141a" alt="Simulator Screenshot 2" width="250"/>
+  <img src="https://github.com/user-attachments/assets/480c6fef-47a6-4b5b-b05e-1b707ee5ddba" alt="Simulator Screenshot 3" width="250"/>
+</p>
+
 ## Key Features 🚀
 
 ### MVVM Architecture 🏛️
