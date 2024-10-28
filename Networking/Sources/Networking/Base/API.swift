@@ -15,7 +15,7 @@ public enum API {
     static func getHeaders() -> [String: String] {
         var headers: [String: String] = ["AppId": "8cb2237d0679ca88db6464",
                                          "Content-Type": "application/json",
-                                         "appVersion": "10.33.0",
+                                         "appVersion": "10.41.0",
                                          "apiVersion": "3.0.0"]
         if let token = Authentication.token {
             headers["Authorization"] = "Bearer \(token)"
