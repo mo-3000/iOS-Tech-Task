@@ -19,15 +19,3 @@ extension URLSession: NetworkSessionProtocol {
         return data
     }
 }
-
-// MARK: - NetworkDataTaskProtocol
-
-protocol NetworkDataTask {
-    func start()
-}
-
-extension URLSessionDataTask: NetworkDataTask {
-    func start() {
-        self.resume()
-    }
-}
