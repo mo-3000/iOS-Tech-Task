@@ -51,9 +51,8 @@ final class AccountListViewModel: AccountListViewModelProtocol {
     
     // MARK: - Public Methods
     func fetchProducts() {
-        DispatchQueue.main.async {
-            self.loadingState = .inProgress
-        }
+        self.loadingState = .inProgress
+        
         dataProvider.fetchAccounts { [weak self] result in
             guard let self = self else { return }
             switch result {
