@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 public protocol AppNetworkable {
     /// `URLRequest` of the request.
@@ -71,6 +72,35 @@ public extension AppNetworkable {
             }
         }
         task.resume()
+    }
+    
+    // MARK: - Combine Extension
+    
+    @available(iOS 13.0, *)
+    func fetchResponsePublisher<T: Decodable>() -> AnyPublisher<T, ErrorResponse> {
+        let urlRequest = self.request
+        
+        return URLSession.shared.dataTaskPublisher(for: urlRequest)
+            .tryMap { data, response in
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    throw ErrorResponse(name: nil, message: "Invalid response", validationErrors: nil)
+                }
+                if (200...299).contains(httpResponse.statusCode) {
+                    return data
+                } else {
+                    let errorResponse = try JSONDecoder().decode(ErrorResponse.self, from: data)
+                    throw errorResponse
+                }
+            }
+            .decode(type: T.self, decoder: JSONDecoder())
+            .mapError { error in
+                if let errorResponse = error as? ErrorResponse {
+                    return errorResponse
+                } else {
+                    return ErrorResponse(name: nil, message: error.localizedDescription, validationErrors: nil)
+                }
+            }
+            .eraseToAnyPublisher()
     }
 }
 

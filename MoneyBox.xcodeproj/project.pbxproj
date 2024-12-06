@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		513758EE2CCED3640014B595 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513758ED2CCED3640014B595 /* SceneDelegate.swift */; };
-		5137590D2CCED39B0014B595 /* AccountDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513758EF2CCED39B0014B595 /* AccountDetailViewController.swift */; };
+		5137590D2CCED39B0014B595 /* AccountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513758EF2CCED39B0014B595 /* AccountDetailView.swift */; };
 		5137590E2CCED39B0014B595 /* AccountListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513758F02CCED39B0014B595 /* AccountListViewController.swift */; };
 		5137590F2CCED39B0014B595 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513758F12CCED39B0014B595 /* LoginViewController.swift */; };
 		513759102CCED39B0014B595 /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513758F32CCED39B0014B595 /* AccountCell.swift */; };
@@ -16,11 +16,8 @@
 		513759122CCED39B0014B595 /* AccountListViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513758F52CCED39B0014B595 /* AccountListViewController+CollectionView.swift */; };
 		513759132CCED39B0014B595 /* AccountsCollectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513758F62CCED39B0014B595 /* AccountsCollectionHelper.swift */; };
 		513759142CCED39B0014B595 /* AccountScreenHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513758F72CCED39B0014B595 /* AccountScreenHeaderView.swift */; };
-		513759152CCED39B0014B595 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513758F82CCED39B0014B595 /* CardView.swift */; };
 		513759162CCED39B0014B595 /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513758F92CCED39B0014B595 /* InputFieldView.swift */; };
 		513759172CCED39B0014B595 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513758FA2CCED39B0014B595 /* LoginButton.swift */; };
-		513759182CCED39B0014B595 /* PillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513758FB2CCED39B0014B595 /* PillView.swift */; };
-		513759192CCED39B0014B595 /* RoundedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513758FC2CCED39B0014B595 /* RoundedButtonView.swift */; };
 		5137591A2CCED39B0014B595 /* UIViewController+LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513758FD2CCED39B0014B595 /* UIViewController+LoadingIndicator.swift */; };
 		5137591B2CCED39B0014B595 /* Double+CurrencyFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513759002CCED39B0014B595 /* Double+CurrencyFormatting.swift */; };
 		5137591C2CCED39B0014B595 /* NetworkSessionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513759012CCED39B0014B595 /* NetworkSessionExtensions.swift */; };
@@ -37,6 +34,8 @@
 		513B352D2CCED7550000FF96 /* DataProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B35252CCED7550000FF96 /* DataProviderMock.swift */; };
 		513B352E2CCED7550000FF96 /* NetworkSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B35262CCED7550000FF96 /* NetworkSessionMock.swift */; };
 		513B352F2CCED7550000FF96 /* SessionManagerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B35272CCED7550000FF96 /* SessionManagerStub.swift */; };
+		514CFDAB2D0223C7006BC25A /* MainButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514CFDAA2D0223BC006BC25A /* MainButtonStyle.swift */; };
+		514CFDAD2D036140006BC25A /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514CFDAC2D03613B006BC25A /* BlurView.swift */; };
 		B26EF47828881E7F003BFDF2 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = B26EF47728881E7F003BFDF2 /* Networking */; };
 		B2CA46CC279350880041B3A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CA46CB279350880041B3A5 /* AppDelegate.swift */; };
 		B2CA46D52793508A0041B3A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2CA46D42793508A0041B3A5 /* Assets.xcassets */; };
@@ -58,7 +57,7 @@
 
 /* Begin PBXFileReference section */
 		513758ED2CCED3640014B595 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		513758EF2CCED39B0014B595 /* AccountDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailViewController.swift; sourceTree = "<group>"; };
+		513758EF2CCED39B0014B595 /* AccountDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailView.swift; sourceTree = "<group>"; };
 		513758F02CCED39B0014B595 /* AccountListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountListViewController.swift; sourceTree = "<group>"; };
 		513758F12CCED39B0014B595 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		513758F32CCED39B0014B595 /* AccountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
@@ -66,11 +65,8 @@
 		513758F52CCED39B0014B595 /* AccountListViewController+CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountListViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		513758F62CCED39B0014B595 /* AccountsCollectionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsCollectionHelper.swift; sourceTree = "<group>"; };
 		513758F72CCED39B0014B595 /* AccountScreenHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountScreenHeaderView.swift; sourceTree = "<group>"; };
-		513758F82CCED39B0014B595 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		513758F92CCED39B0014B595 /* InputFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
 		513758FA2CCED39B0014B595 /* LoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
-		513758FB2CCED39B0014B595 /* PillView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillView.swift; sourceTree = "<group>"; };
-		513758FC2CCED39B0014B595 /* RoundedButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButtonView.swift; sourceTree = "<group>"; };
 		513758FD2CCED39B0014B595 /* UIViewController+LoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+LoadingIndicator.swift"; sourceTree = "<group>"; };
 		513759002CCED39B0014B595 /* Double+CurrencyFormatting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+CurrencyFormatting.swift"; sourceTree = "<group>"; };
 		513759012CCED39B0014B595 /* NetworkSessionExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionExtensions.swift; sourceTree = "<group>"; };
@@ -87,6 +83,8 @@
 		513B35252CCED7550000FF96 /* DataProviderMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviderMock.swift; sourceTree = "<group>"; };
 		513B35262CCED7550000FF96 /* NetworkSessionMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionMock.swift; sourceTree = "<group>"; };
 		513B35272CCED7550000FF96 /* SessionManagerStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManagerStub.swift; sourceTree = "<group>"; };
+		514CFDAA2D0223BC006BC25A /* MainButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonStyle.swift; sourceTree = "<group>"; };
+		514CFDAC2D03613B006BC25A /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		B24EED92288ED5740016C233 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
 		B2CA46C8279350880041B3A5 /* MoneyBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2CA46CB279350880041B3A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,7 +119,7 @@
 		513758F22CCED39B0014B595 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				513758EF2CCED39B0014B595 /* AccountDetailViewController.swift */,
+				513758EF2CCED39B0014B595 /* AccountDetailView.swift */,
 				513758F02CCED39B0014B595 /* AccountListViewController.swift */,
 				513758F12CCED39B0014B595 /* LoginViewController.swift */,
 			);
@@ -131,16 +129,15 @@
 		513758FE2CCED39B0014B595 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				514CFDAC2D03613B006BC25A /* BlurView.swift */,
+				514CFDAA2D0223BC006BC25A /* MainButtonStyle.swift */,
 				513758F32CCED39B0014B595 /* AccountCell.swift */,
 				513758F42CCED39B0014B595 /* AccountHeaderView.swift */,
 				513758F52CCED39B0014B595 /* AccountListViewController+CollectionView.swift */,
 				513758F62CCED39B0014B595 /* AccountsCollectionHelper.swift */,
 				513758F72CCED39B0014B595 /* AccountScreenHeaderView.swift */,
-				513758F82CCED39B0014B595 /* CardView.swift */,
 				513758F92CCED39B0014B595 /* InputFieldView.swift */,
 				513758FA2CCED39B0014B595 /* LoginButton.swift */,
-				513758FB2CCED39B0014B595 /* PillView.swift */,
-				513758FC2CCED39B0014B595 /* RoundedButtonView.swift */,
 				513758FD2CCED39B0014B595 /* UIViewController+LoadingIndicator.swift */,
 			);
 			path = Views;
@@ -383,11 +380,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5137590D2CCED39B0014B595 /* AccountDetailViewController.swift in Sources */,
+				5137590D2CCED39B0014B595 /* AccountDetailView.swift in Sources */,
+				514CFDAB2D0223C7006BC25A /* MainButtonStyle.swift in Sources */,
 				B2CA46CC279350880041B3A5 /* AppDelegate.swift in Sources */,
 				5137591B2CCED39B0014B595 /* Double+CurrencyFormatting.swift in Sources */,
 				513759162CCED39B0014B595 /* InputFieldView.swift in Sources */,
-				513759192CCED39B0014B595 /* RoundedButtonView.swift in Sources */,
 				5137590E2CCED39B0014B595 /* AccountListViewController.swift in Sources */,
 				513759212CCED39B0014B595 /* AccountDetailViewModel.swift in Sources */,
 				5137591A2CCED39B0014B595 /* UIViewController+LoadingIndicator.swift in Sources */,
@@ -400,10 +397,9 @@
 				513759132CCED39B0014B595 /* AccountsCollectionHelper.swift in Sources */,
 				5137591D2CCED39B0014B595 /* UIColor+Extensions.swift in Sources */,
 				513759112CCED39B0014B595 /* AccountHeaderView.swift in Sources */,
+				514CFDAD2D036140006BC25A /* BlurView.swift in Sources */,
 				513759142CCED39B0014B595 /* AccountScreenHeaderView.swift in Sources */,
 				513758EE2CCED3640014B595 /* SceneDelegate.swift in Sources */,
-				513759152CCED39B0014B595 /* CardView.swift in Sources */,
-				513759182CCED39B0014B595 /* PillView.swift in Sources */,
 				5137591C2CCED39B0014B595 /* NetworkSessionExtensions.swift in Sources */,
 				513759102CCED39B0014B595 /* AccountCell.swift in Sources */,
 				513759202CCED39B0014B595 /* ProductViewData.swift in Sources */,

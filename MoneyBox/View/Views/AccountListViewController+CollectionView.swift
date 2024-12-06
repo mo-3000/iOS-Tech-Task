@@ -5,6 +5,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 extension AccountListViewController: UICollectionViewDelegate {
     
@@ -38,9 +39,14 @@ extension AccountListViewController: UICollectionViewDelegate {
     
     private func showAccountDetails(for account: ProductViewData) {
         navigationItem.title = ""
-        let detailViewModel = AccountDetailViewModel(account: account)
-        let detailViewController = AccountDetailViewController(viewModel: detailViewModel)
         
-        navigationController?.pushViewController(detailViewController, animated: true)
+        let backButtonAppearance = UIBarButtonItem.appearance(whenContainedInInstancesOf: [UINavigationController.self])
+        backButtonAppearance.tintColor = .white
+        
+        let detailViewModel = AccountDetailViewModel(account: account)
+        let detailView = AccountDetailView(viewModel: detailViewModel)
+        let hostingController = UIHostingController(rootView: detailView)
+        
+        navigationController?.pushViewController(hostingController, animated: true)
     }
 }

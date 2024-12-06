@@ -46,3 +46,50 @@ private extension String {
         return attributedText
     }
 }
+import SwiftUI
+
+extension Double {
+    func formatAsCurrencyAttributedStringSwiftUI(
+        primaryFontSize: CGFloat,
+        secondaryFontSize: CGFloat
+    ) -> AttributedString {
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.maximumFractionDigits = 2
+
+        let currencyString = currencyFormatter.string(from: NSNumber(value: self)) ?? ""
+
+        return currencyString.toAttributedCurrencyFormat(
+            mainFontSize: primaryFontSize,
+            fractionFontSize: secondaryFontSize
+        )
+    }
+}
+
+private extension String {
+    func toAttributedCurrencyFormat(
+        mainFontSize: CGFloat,
+        fractionFontSize: CGFloat
+    ) -> AttributedString {
+        var attributedText = AttributedString(self)
+
+        let decimalSeparator = Locale.current.decimalSeparator ?? "."
+
+        if let decimalRange = self.range(of: decimalSeparator) {
+            let integerPart = String(self[self.startIndex..<decimalRange.lowerBound])
+            let fractionalPart = String(self[decimalRange.lowerBound..<self.endIndex])
+
+            if let integerRange = attributedText.range(of: integerPart) {
+                attributedText[integerRange].font = .system(size: mainFontSize, weight: .medium)
+            }
+
+            if let fractionalRange = attributedText.range(of: fractionalPart) {
+                attributedText[fractionalRange].font = .system(size: fractionFontSize, weight: .medium)
+            }
+        } else {
+            attributedText.font = .system(size: mainFontSize, weight: .medium)
+        }
+
+        return attributedText
+    }
+}
